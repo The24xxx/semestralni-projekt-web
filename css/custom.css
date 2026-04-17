@@ -4,8 +4,11 @@
   --color-text: #f5f5f5;
   --color-muted: #c7c7c7;
   --color-accent: #d6b36a;
+  --color-accent-rgb: 214, 179, 106;
   --color-border: #2b2b31;
   --font-main: Arial, sans-serif;
+  --top-strip-height: 1.5rem;
+  --page-strip-opacity: 0.2;
 }
 
 .logo {
@@ -359,7 +362,44 @@ header {
 }
 
 main {
-  padding-top: 1.5rem;
+  padding-top: var(--top-strip-height);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(var(--color-accent-rgb), var(--page-strip-opacity)) 0%,
+      rgba(var(--color-accent-rgb), calc(var(--page-strip-opacity) * 0.52)) 58%,
+      rgba(var(--color-accent-rgb), 0) 100%
+    );
+  background-repeat: no-repeat;
+  background-size: 100% var(--top-strip-height);
+}
+
+body.page-home {
+  --page-strip-opacity: 0.2;
+}
+
+body.page-about {
+  --page-strip-opacity: 0.182;
+}
+
+body.page-gallery {
+  --page-strip-opacity: 0.136;
+}
+
+body.page-booking {
+  --page-strip-opacity: 0.12;
+}
+
+body.page-pricing {
+  --page-strip-opacity: 0.095;
+}
+
+body.page-faq {
+  --page-strip-opacity: 0.072;
+}
+
+body.page-contact {
+  --page-strip-opacity: 0.05;
 }
 
 main section + section {
