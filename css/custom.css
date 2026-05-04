@@ -729,3 +729,89 @@ nav a:not([aria-current="page"]):hover {
 .gallery-section p {
   color: var(--color-muted);
 }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 2000;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: min(90vw, 1000px);
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background-color: #111;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+  border: 1px solid var(--color-border);
+  background-color: rgba(24, 24, 27, 0.9);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+  background-color: var(--color-accent);
+  color: #111;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.lightbox-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 1rem;
+  }
+
+  .lightbox-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .lightbox-close {
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+  }
+}
